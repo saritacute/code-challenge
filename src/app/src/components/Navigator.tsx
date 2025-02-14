@@ -1,6 +1,7 @@
 import {ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Camera} from 'lucide-react';
 import {useQueryState} from 'nuqs';
 import {useEffect} from 'react';
+import {toast} from 'sonner';
 import {queryClient} from '../client';
 import {keyActions, otherActions} from '../constants/key-actions';
 import {useInstructDrone} from '../hook/useInstructDrone';
@@ -31,6 +32,10 @@ export default function Navigator() {
     };
 
     const onSubmitAction = () => {
+        if (!directions?.includes('x')) {
+            toast.error('Your directions doesnt have any captures');
+            return;
+        }
         const newDirections = removeDuplicate(directions?.split('') || []);
         setDirections(newDirections.join(''));
         refetch();
@@ -114,7 +119,6 @@ export default function Navigator() {
                 <button
                     className="bg-blue-200 p-2 rounded-md flex flex-row gap-2 items-center justify-center"
                     onClick={onSubmitAction}
-                    disabled={!directions.includes('x')}
                 >
                     Get Billboards
                 </button>
