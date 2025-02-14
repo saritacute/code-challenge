@@ -1,6 +1,6 @@
-import {useState} from 'react';
-import {getBillboardDetails} from '../api';
-import {Billboard as BillboardType} from '../types';
+import { useState } from 'react';
+import { getBillboardDetails } from '../api';
+import { Billboard as BillboardType } from '../types';
 
 export default function Billboard({billboard}: {billboard: BillboardType}) {
     const [billboardDetails, setBillboardDetails] = useState<BillboardType | null>(null);
@@ -8,7 +8,6 @@ export default function Billboard({billboard}: {billboard: BillboardType}) {
     const fetchBillboardDetails = async () => {
         try {
             const {billboard: billboardDetails} = await getBillboardDetails(billboard.id);
-            console.log(billboardDetails);
             setBillboardDetails(billboardDetails);
         } catch (error) {
             console.error(error);
