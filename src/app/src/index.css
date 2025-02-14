@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+kbd {
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+}
