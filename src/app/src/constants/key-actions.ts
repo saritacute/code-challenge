@@ -3,7 +3,7 @@ export const keyActions = {
   "ArrowDown": "v",
   "ArrowLeft": "<",
   "ArrowRight": ">",
-  " ": "x",
+  "Enter": "x",
 } as const;
 
 export const otherActions = {

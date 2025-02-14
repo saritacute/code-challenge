@@ -1,15 +1,20 @@
-import { InstructDroneResponse } from "../types"
+import { BillboardDetailsResponse, InstructDroneResponse } from "../types";
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const instructDrone = async (instructions: string): Promise<InstructDroneResponse> => {
   const response = await fetch(`/api/instruct-drone?instructions=${instructions}`, {
     method: "GET",
   })
+  await delay(250)
   return response.json()
 }
 
-export const getBillboardDetails = async (id: string) => {
+export const getBillboardDetails = async (id: string): Promise<BillboardDetailsResponse['billboard']> => {
   const response = await fetch(`/api/get-billboard?id=${id}`, {
     method: "GET",
   })
-  return response.json()
+  const data = await response.json()
+  await delay(250)
+  return data?.billboard
 }

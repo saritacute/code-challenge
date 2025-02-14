@@ -14,3 +14,8 @@ export interface Billboard {
   billboardText: string
   image: string
 }
+
+export interface BillboardDetailsResponse {
+  success: boolean
+  billboard: Billboard
+}
