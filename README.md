@@ -10,7 +10,7 @@ yarn/pnpm/npm install
 yarn/pnpm/npm run start-dev
 
 # Run the tests
-yarn/pnpm/npm test
+yarn/pnpm/npm run test
 ```
 
 ## Things that can be improved
