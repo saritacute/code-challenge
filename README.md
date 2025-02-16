@@ -17,7 +17,7 @@ yarn/pnpm/npm test
 
 -   Used tanstack query to fetch data and cache it
 -   Used nuqs to manage the query params since in a real-world scenario specially apps with maps or coordinates, query params should be used to easily manage and share the state
--   I removed the mutiple captures (x) from the same coordinates to make the app more efficient (@ remove-duplicate.ts util)
+-   I removed the mutiple captures (x) from the same coordinates before sending it to the backend to make the app more efficient (@ remove-duplicate.ts util)
 -   You can use arrow keys to navigate the drone and Enter to capture the billboard on the current position
 
 ## Notes

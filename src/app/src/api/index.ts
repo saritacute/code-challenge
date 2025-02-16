@@ -15,6 +15,5 @@ export const getBillboardDetails = async (id: string): Promise<BillboardDetailsR
     method: "GET",
   })
   const data = await response.json()
-  await delay(250)
   return data?.billboard
 }
