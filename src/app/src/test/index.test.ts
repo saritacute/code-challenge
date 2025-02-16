@@ -3,9 +3,9 @@ import { removeDuplicate } from '../utils/remove-duplicate';
 
 test('Remove captures from the same billboard using its coordinates', () => {
   const directions = 'x^^x>>xvvx<<x';
-  expect(removeDuplicate(directions.split(''))).toEqual(['x', '^', '^', 'x', '>', '>', 'x', 'v', 'v', 'x', '<', '<'])
+  expect(removeDuplicate(directions)).toEqual('x^^x>>xvvx<<')
 
   const directions2 = 'x^^vvxv';
-  expect(removeDuplicate(directions2.split(''))).toEqual(['x', '^', '^', 'v', 'v', 'v'])
+  expect(removeDuplicate(directions2)).toEqual('x^^vvv')
 
 })

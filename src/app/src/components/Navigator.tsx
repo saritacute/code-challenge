@@ -11,7 +11,7 @@ import {removeDuplicate} from '../utils/remove-duplicate';
 export default function Navigator() {
     const [directions, setDirections] = useQueryState('directions', {defaultValue: ''});
 
-    const {refetch} = useInstructDrone(directions);
+    const {refetch} = useInstructDrone(removeDuplicate(directions));
 
     useEffect(() => {
         refetch();
@@ -36,8 +36,6 @@ export default function Navigator() {
             toast.error('Your directions doesnt have any captures');
             return;
         }
-        const newDirections = removeDuplicate(directions?.split('') || []);
-        setDirections(newDirections.join(''));
         refetch();
     };
 

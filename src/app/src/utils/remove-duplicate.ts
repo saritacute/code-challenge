@@ -1,10 +1,10 @@
-export const removeDuplicate = (directions: string[]) => {
+export const removeDuplicate = (directions: string) => {
   let x = 0;
   let y = 0;
   const coordinatesWithCaptures = new Map();
   const newCoordinates = []
-  
-  for (const direction of directions) {
+  const directionsArray = directions.split('');
+  for (const direction of directionsArray) {
       if (direction === 'v') {
           newCoordinates.push(direction)
           y++;
@@ -26,6 +26,6 @@ export const removeDuplicate = (directions: string[]) => {
         }
       }
   }
-  return newCoordinates;
+  return newCoordinates.join('');
 };
 
